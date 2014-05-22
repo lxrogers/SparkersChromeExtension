@@ -1,13 +1,13 @@
 
 console.log("content js");
 
+//FACEBOOK
+
+
 //send id's to the popup window
 chrome.runtime.sendMessage({id1: "lawrencexrogers"}, function(response) {});
 console.log("content sent message ");
 
-$('textarea.uiTextareaAutogrow').keydown(function() {
-    //alert("key down");
-})
 
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
@@ -23,12 +23,14 @@ chrome.runtime.onMessage.addListener(
         $('textarea.uiTextareaAutogrow').focus();
         $('textarea.uiTextareaAutogrow').mousedown();
         $('textarea.uiTextareaAutogrow').click();
-        $('textarea.uiTextareaAutogrow').mouseup();
+        $('textarea.uiTextareaAutogrow').mouseup();      
+
+    	$('textarea.uiTextareaAutogrow').val(request.sparker_data);
+        $('textarea.uiTextareaAutogrow').keydown();
         $('textarea.uiTextareaAutogrow').trigger(e);
 
-    	$('textarea.uiTextareaAutogrow').val(request.sparker_data  );
-
-
     }
-
   });
+
+
+

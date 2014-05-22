@@ -6,7 +6,9 @@
   
   "background": "background.html",
 	"permissions": [
-    "https://www.facebook.com/messages/*"
+    "https://www.facebook.com/messages/*",
+    "notifications",
+    "clipboardWrite"
 	],
 
   "browser_action": {
