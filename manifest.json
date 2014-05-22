@@ -26,5 +26,7 @@
         "js": ["scripts/jquery-1.6.1.min.js","scripts/content.js"],
         "run_at": "document_end"         // pay attention to this line
         }
-    ]
+    ],
+    
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }
