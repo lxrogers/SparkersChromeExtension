@@ -25,12 +25,6 @@ h2 {
 	background-color: #000;
 }
 
-.spark-container:hover .spark {
-	opacity: .2;
-}
-.spark-container:hover .overlay {
-	opacity: 1;
-}
 .spark {
 	transition:opacity .5s;
 	color: #FFF;
@@ -47,4 +41,18 @@ h2 {
 	color: #FFF;
 	transition:opacity .5s;
 	width: 100%;
+}
+
+.copied {
+	position:absolute;
+	top: 20%;
+	opacity: 0;
+	text-align: center;
+	color: #FFF;
+	transition:opacity .5s;
+	width: 100%;
+}
+
+.hidden {
+	display: none;
 }
