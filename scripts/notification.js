@@ -39,5 +39,7 @@ chrome.runtime.onMessage.addListener(
 chrome.notifications.onClicked.addListener(function(notificationID) {
   window.open("http://www.facebook.com/messages/ranajays");
   startNotificationAnimation();
-
+  setTimeout(function() {
+    alert("Click the Orange Sparkers Icon in the top right to view mutual content to share!");
+  }, 2000);
 })
