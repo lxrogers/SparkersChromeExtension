@@ -27,22 +27,29 @@
               <h1>{{this.text}}</h1>
               <h2> Video </h2>
             </div>
+            <div class="copied"><h1>Copied to clipboard<h1></div>
+
             <div class="spark">
                <img src="{{this.img_small}}" alt="click to copy to clipboard"/>
             </div>
+            <div class="hidden payload">Remember {{this.text}}? {{this.img_small}}</div>
         {{else }}
             {{#if this.img_big}}
               <div class="overlay">
                 <h1>{{this.text}}</h1>
                 <h2> Image </h2>
               </div>
+              <div class="copied"><h1>Copied to clipboard<h1></div>
               <div class="spark">
                   <img src="{{this.img_big}}" alt="click to copy to clipboard"/>
               </div>
+              <div class="hidden payload">Remember {{this.text}}? {{this.img_big}}</div>
             {{else }}
               <div class="spark">
                   {{this.text}}
               </div>
+              <div class="copied"><h1>Copied to clipboard<h1></div>
+              <div class="hidden payload">Remember my status, "{{this.text}}"?</div>
             {{/if}}
         {{/if}}
       </div>

@@ -70,12 +70,26 @@ var html = templates.renderSparksImages({
 });
 
 $('#sparks').html(html);// i heard you like html
-$('#send-button').click(function() {
 
-	//send sparkers to the content script
-	chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-  		chrome.tabs.sendMessage(tabs[0].id, {sparker_data: "https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-frc1/t31.0-8/1414994_10151745722260759_963732921_o.jpg"}, function(response) {});
-	});
+$('.spark-container').mouseover(function() {
+  $('.overlay', this).css({opacity: 1});
+  $('.spark', this).css({opacity: .2});
+})
+
+$('.spark-container').mouseout(function() {
+  $('.overlay', this).css({opacity: 0});
+  $('.spark', this).css({opacity: 1});
+  $('.copied', this).css({opacity: 0});
+})
+
+$('.spark-container').click(function() {
+  copyTextToClipboard($('.hidden', this).html());
+
+  $('.copied').css({opacity: 0});
+
+  $(".copied", this).css({opacity: 1});
+  $(".overlay", this).css({opacity: 0});
+  $(".spark", this).css({opacity: .2});
 })
 
 $('#notification-button').click(function() {
@@ -97,16 +111,13 @@ chrome.notifications.onClicked.addListener(function(notificationID) {
 
 })
 
-// Copy text to the Clipboard function
-// uses 'url' input element to select text
-// parameters: text - text to be copied to the clipboard
-function copyToClipboard( text )
-{
-  var input = document.getElementById( 'url' );
-  input.value = text;
-  input.focus();
-  input.select();
-  document.execCommand( 'Copy' );
+function copyTextToClipboard(text) {
+  var copyFrom = $('<textarea/>');
+  copyFrom.text(text);
+  $('body').append(copyFrom);
+  copyFrom.select();
+  document.execCommand('copy');
+  copyFrom.remove();
 }
 
 
