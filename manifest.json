@@ -1,0 +1,28 @@
+{
+  "name": "Hello World!",
+  "manifest_version": 2,
+  "version": "1.0",
+  "description": "My first Chrome extension.",
+  
+  "background": "background.html",
+	"permissions": [
+    "https://www.facebook.com/messages/*"
+	],
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_title": "Sparkers",
+    "default_popup": "popup.html"
+  },
+
+  "content_scripts": [
+        {
+        "matches": [
+            "http://*/*",
+            "https://*/*"
+            ],
+        "js": ["scripts/jquery-1.6.1.min.js","scripts/content.js"],
+        "run_at": "document_end"         // pay attention to this line
+        }
+    ]
+}
