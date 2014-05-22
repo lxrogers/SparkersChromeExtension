@@ -14,6 +14,8 @@
   </body>
   <div id= "sparks">
 
+    <img src="images/loadingGif.gif" width="150px"/><br/>
+    loading content...
   </div>
 
    <script type="text/x-handlebars-template" id="sparks-template">
@@ -24,7 +26,7 @@
         {{#if this.video_embed}}
             <div class="overlay">
               <h1>{{this.text}}</h1>
-              <h2> Video </h2>
+              <h2> {{this.type}} {{this.date}}</h2>
             </div>
             <div class="copied"><h1>Copied to clipboard<h1></div>
 
@@ -36,7 +38,7 @@
             {{#if this.img_big}}
               <div class="overlay">
                 <h1>{{this.text}}</h1>
-                <h2> Image </h2>
+                <h2> {{this.type}} {{this.date}}</h2>
               </div>
               <div class="copied"><h1>Copied to clipboard<h1></div>
               <div class="spark">
@@ -44,9 +46,13 @@
               </div>
               <div class="hidden payload">Remember {{this.text}}? {{this.img_big}}</div>
             {{else }}
+              <div class="overlay">
+              <h2> {{this.type}} {{this.date}}</h2>
+            </div>
               <div class="spark">
                   {{this.text}}
               </div>
+
               <div class="copied"><h1>Copied to clipboard<h1></div>
               <div class="hidden payload">Remember my status, "{{this.text}}"?</div>
             {{/if}}
