@@ -1,16 +1,12 @@
 
-console.log("content js");
+if (document.URL == "https://www.google.com/") {
+    setTimeout(function() {
+        chrome.runtime.sendMessage({greeting: "sendnotificationbitch"}, function(response) {
+      
+        });
+    }, 3000);
+}
 
-
-
-    
-
-setTimeout(function() {
-    console.log("sending message");
-    chrome.runtime.sendMessage({greeting: "sendnotificationbitch"}, function(response) {
-  
-    });
-    }, 5000);
 
 function getOtherID() {
     var url = document.URL;
