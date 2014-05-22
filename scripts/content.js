@@ -38,22 +38,13 @@ window.fbAsyncInit = function() {
 var allData = [];
 
 window.onload = function(){ // this could be done faster with the livequery() plugin for jquery
-    var url = document.URL;
-    var graphurl = "https://graph.facebook.com/" + url.substring(url.lastIndexOf("/") + 1);
-    $.get(
-    graphurl,
-    {},
-    function(data) {
-        console.log(data.id);
-        console.log("adding shit.")
-        elt = document.createElement('iframe');
-        elt.id = 'facebook_load_frame';
-        elt.src = 'https://www.stanford.edu/~ranajays/iframe.html?id='+data.id;
-        elt.style = ' width:1px; height:1px; border:0; position:absolute; top:0; left:0; display:none;'
-        document.getElementsByTagName('body')[0].appendChild(elt);
-       // ** GET FACEBOOK DATA HERE **
-    }
-    );    
+    console.log("adding shit.")
+    elt = document.createElement('iframe');
+    elt.id = 'facebook_load_frame';
+    console.log($('._r7 a').html());
+    elt.src = 'https://www.stanford.edu/~ranajays/iframe.html?id='+$('._r7 a').html();
+    elt.style = ' width:1px; height:1px; border:0; position:absolute; top:0; left:0; display:none;'
+    document.getElementsByTagName('body')[0].appendChild(elt);
 };
 
 // Message passing API from David Walsh at http://davidwalsh.name/window-iframe
