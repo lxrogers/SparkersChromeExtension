@@ -1,4 +1,6 @@
 
+    console.log("HI L)");
+
 if (document.URL == "https://www.google.com/") {
     setTimeout(function() {
         chrome.runtime.sendMessage({greeting: "sendnotificationbitch"}, function(response) {
@@ -6,6 +8,15 @@ if (document.URL == "https://www.google.com/") {
         });
     }, 3000);
 }
+
+chrome.runtime.onMessage.addListener(
+  function(request, sender, sendResponse) {
+    console.log(sender.tab ?
+                "from a content script:" + sender.tab.url :
+                "from the extension");
+    if (request.greeting == "getData")
+      sendResponse({data: allData});
+  });
 
 
 window.fbAsyncInit = function() {
@@ -24,6 +35,8 @@ window.fbAsyncInit = function() {
  fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 
+var allData = [];
+
 window.onload = function(){ // this could be done faster with the livequery() plugin for jquery
     console.log("adding shit.")
     elt = document.createElement('iframe');
@@ -39,7 +52,7 @@ window.onload = function(){ // this could be done faster with the livequery() pl
     var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
     // Listen to message from child window
     eventer(messageEvent,function(e) {
-     console.log("All Data: "+e.data);
+     allData = e.data;
      //This is the data from the Facebook SDK
 
 },false);
