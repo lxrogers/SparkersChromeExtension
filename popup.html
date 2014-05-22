@@ -1,16 +1,60 @@
 <html>
   <head>
     <script src='scripts/jquery-1.6.1.min.js'></script>
+    <script src="scripts/handlebars.js"></script>
     <link rel="stylesheet" href="styles/style.css" type="text/css" />
   </head>
 
   <body>
     <div id="popup">
-    	Hello World
+      <h2>Mutual Content</h2><br/>
+    	Click and item to copy to clipboard!
     </div>
-    <input type="button" id="send-button" value="send"></input>
-    <input type="button" id="notification-button" value="test notification"></input>
+    
   </body>
+  <input type="button" id="not" value="NOTIFY"/>
+  <div id= "sparks">
 
-  <script src='scripts/popup.js'></script>
+  </div>
+
+   <script type="text/x-handlebars-template" id="sparks-template">
+      {{#each sparks }}
+        
+      <div class="spark-container">
+        
+        {{#if this.video_embed}}
+            <div class="overlay">
+              <h1>{{this.text}}</h1>
+              <h2> Video </h2>
+            </div>
+            <div class="copied"><h1>Copied to clipboard<h1></div>
+
+            <div class="spark">
+               <img src="{{this.img_small}}" alt="click to copy to clipboard"/>
+            </div>
+            <div class="hidden payload">Remember {{this.text}}? {{this.img_small}}</div>
+        {{else }}
+            {{#if this.img_big}}
+              <div class="overlay">
+                <h1>{{this.text}}</h1>
+                <h2> Image </h2>
+              </div>
+              <div class="copied"><h1>Copied to clipboard<h1></div>
+              <div class="spark">
+                  <img src="{{this.img_big}}" alt="click to copy to clipboard"/>
+              </div>
+              <div class="hidden payload">Remember {{this.text}}? {{this.img_big}}</div>
+            {{else }}
+              <div class="spark">
+                  {{this.text}}
+              </div>
+              <div class="copied"><h1>Copied to clipboard<h1></div>
+              <div class="hidden payload">Remember my status, "{{this.text}}"?</div>
+            {{/if}}
+        {{/if}}
+      </div>
+      {{/each}}
+    </script>
+
+    <script src='scripts/popup.js'></script>
 </html>
