@@ -55,6 +55,10 @@ var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
 // Listen to message from child window
 eventer(messageEvent,function(e) {
  allData = e.data;
+
+ //send message
+chrome.runtime.sendMessage({data: allData}, function(response) {});
+
  //This is the data from the Facebook SDK
 },false);
 

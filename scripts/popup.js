@@ -9,7 +9,13 @@ chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
   chrome.tabs.sendMessage(tabs[0].id, {greeting: "getData"}, function(response) {
     console.log("response reeived from content script");
     console.log(response);
-    var html = templates.renderSparksImages({sparks: response.data});
+    if (response.data) {
+      renderSparks(response.data);
+    }
+  });
+});
+function renderSparks(data) {
+  var html = templates.renderSparksImages({sparks: data});
     $('#sparks').html(html);// i heard you like html
     $('.spark-container').mouseover(function() {
       $('.overlay', this).css({opacity: 1});
@@ -31,9 +37,7 @@ chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
       $(".overlay", this).css({opacity: 0});
       $(".spark", this).css({opacity: .2});
     })
-  });
-});
-
+}
 function copyTextToClipboard(text) {
   var copyFrom = $('<textarea/>');
   copyFrom.text(text);
@@ -50,12 +54,9 @@ chrome.runtime.onMessage.addListener(
     console.log(sender.tab ?
                 "from a content script:" + sender.tab.url :
                 "from the extension");
-    if (request.id1) {
-      console.log( " popup received: " + request.id1);
+    if (request.data) {
+      console.log( " popup received: " + request.data);
+      renderSparks(request.data);
     }
-    //show data in popup.html
-
-    //add click listeners to data
-    //clicked'
-    //copy to clipbaord show ("it has been copied paste")
+    
 });
