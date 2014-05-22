@@ -1,8 +1,8 @@
 {
-  "name": "Hello World!",
+  "name": "Sparkers",
   "manifest_version": 2,
   "version": "1.0",
-  "description": "My first Chrome extension.",
+  "description": "Sparkers reminds you of your event anniversaries and resparks your friendships!",
   
   "background": "background.html",
 	"permissions": [
@@ -10,9 +10,12 @@
     "notifications",
     "clipboardWrite"
 	],
+  "icons": { "16" : "images/sparkers_icon.png",
+                        "48" : "images/sparkers_icon_48.png",
+                        "128" : "images/sparkers_icon_128.png"},
 
   "browser_action": {
-    "default_icon": "icon.png",
+    "default_icon": "images/sparkers_icon.png",
     "default_title": "Sparkers",
     "default_popup": "popup.html"
   },
