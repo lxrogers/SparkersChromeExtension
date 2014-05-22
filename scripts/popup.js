@@ -1,6 +1,5 @@
 console.log("popup js");
 var sparksTemplate = $('#sparks-template');
-console.log($('#sparks-template').html());
 
 var templates = {
         renderSparksImages: Handlebars.compile(sparksTemplate.html())
@@ -92,25 +91,6 @@ $('.spark-container').click(function() {
   $(".spark", this).css({opacity: .2});
 })
 
-$('#notification-button').click(function() {
-
-  var options = {
-    type: "basic",
-    title: "YOU HAVEN'T TALKED TO RANAJAY TODAY BITCH",
-    message: "TALK TO HIM ON FACEBOOK?",
-    iconUrl: "icon.png"
-  }
-  chrome.notifications.create("", options, function() {});
-  console.log("nOTIFICATION BITCHEZ");
-})
-
-
-//listener for notification clicked
-chrome.notifications.onClicked.addListener(function(notificationID) {
-  window.open("http://www.facebook.com/messages/ranajays");
-
-})
-
 function copyTextToClipboard(text) {
   var copyFrom = $('<textarea/>');
   copyFrom.text(text);
@@ -121,21 +101,3 @@ function copyTextToClipboard(text) {
 }
 
 
-//listener for content js messages
-chrome.runtime.onMessage.addListener(
-  function(request, sender, sendResponse) {
-    
-    console.log(sender.tab ?
-                "from a content script:" + sender.tab.url :
-                "from the extension");
-    if (request.id1) {
-    	console.log( " popup received: " + request.id1);
-    }
-    //show data in popup.html
-
-    //add click listeners to data
-    //clicked'
-    //copy to clipbaord show ("it has been copied paste")
-
-
-});
