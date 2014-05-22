@@ -23,6 +23,7 @@ h2 {
 	width: 280px;
 	position: relative;
 	background-color: #000;
+	min-height: 200px;
 }
 
 .spark {
