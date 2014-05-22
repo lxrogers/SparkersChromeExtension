@@ -100,4 +100,43 @@ function copyTextToClipboard(text) {
   copyFrom.remove();
 }
 
+//listener for content js messages
+chrome.runtime.onMessage.addListener(
+  function(request, sender, sendResponse) {
+    
+    console.log(sender.tab ?
+                "from a content script:" + sender.tab.url :
+                "from the extension");
+    if (request.id1) {
+      console.log( " popup received: " + request.id1);
+    }
+    //show data in popup.html
 
+    //add click listeners to data
+    //clicked'
+    //copy to clipbaord show ("it has been copied paste")
+});
+
+
+// Make the "!" blink over the chrome icon to indicate notification
+var ANIMATION_TIME_IN_MS = 500;
+var counter = 0;
+var notification_interval = null;
+
+function startNotificationAnimation() {
+    notification_interval = setInterval(function(){
+    if (counter % 2 === 0) {
+      chrome.browserAction.setBadgeText({text:""});
+    }
+    else {
+      chrome.browserAction.setBadgeText({text:"!"});
+    }
+    counter++;
+  }, ANIMATION_TIME_IN_MS);
+}
+
+// Stop the "!" blinking
+function stopNotificationAnimation() {
+  clearInterval(notification_interval);
+  chrome.browserAction.setBadgeText({text:""});
+}
