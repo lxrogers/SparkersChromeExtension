@@ -1,8 +1,8 @@
-var otherPersonsName = 'Nusi';
-var otherPersonsGender = 'her';
-var otherPersonsFbUrl = 'ncvue';
-var timeFrame = '3 months';
-var eventThatWeNotifyThemAbout = 'you went to Senior Formal with';
+var otherPersonsName = 'Simon';
+var otherPersonsGender = 'him';
+var otherPersonsFbUrl = 'ninjah';
+var timeFrame = '1 and a half years';
+var eventThatWeNotifyThemAbout = 'you went to Amsterdam with';
 
 // Make the "!" blink over the chrome icon to indicate notification
 var ANIMATION_TIME_IN_MS = 500;
