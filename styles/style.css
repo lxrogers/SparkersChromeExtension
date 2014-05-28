@@ -1,9 +1,13 @@
-
+html {
+	overflow: hidden;
+	height: 600px;
+}
 body {
 	width: 300px;
-	height: 1500px;
+	height: 90%;
 	text-align: center;
 	font-family:"Verdana";
+	overflow: hidden;
 }
 
 h1 {
@@ -13,7 +17,12 @@ h1 {
 h2 {
 	font-size: 100%;
 }
-
+#sparks {
+	position: fixed;
+	height: 80%;
+	top:20%;
+	overflow: scroll;
+}
 .spark-container{
 	margin: 5px;
 	border-style: solid;
@@ -35,7 +44,6 @@ h2 {
 .spark img {
 	width: 100%;
 	opacity: .7;
-
 }
 
 .overlay {

@@ -7,25 +7,25 @@
 
   <body>
     <div id="popup">
-      <h2>Mutual content from your facebook!</h2><br/>
-    	Click an item to copy to clipboard!
+      <br/>
+      <h2>Items you're both tagged in:</h2>
+    	 Click an item to copy to clipboard!
     </div>
+    <div id="spacer"></div>
     
-  </body>
+  
   <div id= "sparks">
-
     <img src="images/loadingGif.gif" width="150px"/><br/>
     loading content...
   </div>
 
+  </body>
    <script type="text/x-handlebars-template" id="sparks-template">
       {{#each sparks }}
         
       <div class="spark-container">
         
         {{#if this.video_embed}}
-            
-
             <div class="spark">
               <div class="overlay">
                 <h2>{{this.text}}</h2>
