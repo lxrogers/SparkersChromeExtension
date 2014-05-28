@@ -24,29 +24,33 @@ h2 {
 	position: relative;
 	background-color: #000;
 	min-height: 200px;
+
 }
 
 .spark {
 	transition:opacity .5s;
 	color: #FFF;
+	vertical-align: middle;
 }
 .spark img {
 	width: 100%;
+	opacity: .7;
+
 }
 
 .overlay {
 	position:absolute;
-	top: 20%;
-	opacity: 0;
+	bottom: 5px;
+	opacity: 1;
 	text-align: center;
 	color: #FFF;
 	transition:opacity .5s;
 	width: 100%;
 }
 
-.copied {
+.copy {
 	position:absolute;
-	top: 20%;
+	top: 35%;
 	opacity: 0;
 	text-align: center;
 	color: #FFF;

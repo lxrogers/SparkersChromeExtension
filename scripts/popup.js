@@ -18,24 +18,19 @@ function renderSparks(data) {
   var html = templates.renderSparksImages({sparks: data});
     $('#sparks').html(html);// i heard you like html
     $('.spark-container').mouseover(function() {
-      $('.overlay', this).css({opacity: 1});
+      //$('.overlay', this).css({opacity: 1});
       $('.spark', this).css({opacity: .2});
+      $('.copy', this).css({opacity: 1});
     })
 
     $('.spark-container').mouseout(function() {
-      $('.overlay', this).css({opacity: 0});
+     //$('.overlay', this).css({opacity: 0});
       $('.spark', this).css({opacity: 1});
-      $('.copied', this).css({opacity: 0});
+      $('.copy', this).css({opacity: 0});
     })
 
     $('.spark-container').click(function() {
       copyTextToClipboard($('.hidden', this).html());
-
-      $('.copied').css({opacity: 0});
-
-      $(".copied", this).css({opacity: 1});
-      $(".overlay", this).css({opacity: 0});
-      $(".spark", this).css({opacity: .2});
     })
 }
 function copyTextToClipboard(text) {
