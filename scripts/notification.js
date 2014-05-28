@@ -1,8 +1,8 @@
 var otherPersonsName = 'Nusi';
 var otherPersonsGender = 'her';
 var otherPersonsFbUrl = 'ncvue';
-var timeFrame = '1 year';
-var eventThatWeNotifyThemAbout = 'you went to formal with';
+var timeFrame = '3 months';
+var eventThatWeNotifyThemAbout = 'you went to Senior Formal with';
 
 // Make the "!" blink over the chrome icon to indicate notification
 var ANIMATION_TIME_IN_MS = 500;
@@ -44,9 +44,9 @@ chrome.runtime.onMessage.addListener(
   });
 
 chrome.notifications.onClicked.addListener(function(notificationID) {
+  stopNotificationAnimation();
   window.open("http://www.facebook.com/messages/" + otherPersonsFbUrl);
   setTimeout(function() {
     alert("Click the Orange Sparkers Icon in the top right to view mutual content between you and " + otherPersonsName + " to share!");
   }, 2000);
-  stopNotificationAnimation();
 });
