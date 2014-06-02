@@ -40,6 +40,7 @@ function copyTextToClipboard(text) {
   copyFrom.select();
   document.execCommand('copy');
   copyFrom.remove();
+  window.close();
 }
 
 //listener for content js messages
