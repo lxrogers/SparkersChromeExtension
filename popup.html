@@ -34,7 +34,7 @@
                <img src="{{this.img_small}}" alt="click to copy to clipboard"/>
             </div>
             <div class="copy"><h1>Copy to clipboard<h1></div>
-            <div class="hidden payload">Remember {{this.text}}? {{this.img_small}}</div>
+            <div class="hidden payload">{{this.img_small}}</div>
         {{else }}
             {{#if this.img_big}}
               <div class="spark">
@@ -44,8 +44,9 @@
                     <h2> {{this.type}} {{this.date}}</h2>
                   </div>
               </div>
+              {{this.link}}
               <div class="copy"><h1>Copy to clipboard<h1></div>
-              <div class="hidden payload">Remember {{this.text}}? {{this.img_big}}</div>
+              <div class="hidden payload">{{this.img_big}}</div>
             {{else }}
               <div class="spark">
                   {{this.text}}
@@ -54,10 +55,11 @@
                   </div>
               </div>
               <div class="copy"><h1>Copy to clipboard<h1></div>
-              <div class="hidden payload">Remember my status, "{{this.text}}"?</div>
+              <div class="hidden payload">{{this.text}}?</div>
             {{/if}}
         {{/if}}
       </div>
+      <center><a href='http://{{this.link}}' target='_blank'>Link</a></center>
       {{/each}}
     </script>
 

@@ -55,3 +55,9 @@ chrome.runtime.onMessage.addListener(
     }
     
 });
+
+$(function() {
+  $('#linker').click(function() {
+     chrome.tabs.create($(this).href);
+  });
+});
