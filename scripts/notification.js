@@ -45,7 +45,7 @@ chrome.runtime.onMessage.addListener(
           imageUrl: choices[i].image
         };
 
-        chrome.notifications.create("", options, function() {});
+        chrome.notifications.create(i.toString(), options, function() {});
       }
 
       console.log("nOTIFICATION BITCHEZ");
@@ -56,7 +56,7 @@ chrome.runtime.onMessage.addListener(
 chrome.notifications.onClicked.addListener(function(notificationID) {
   stopNotificationAnimation();
   window.open("http://www.facebook.com/messages/" + choices[parseInt(notificationID)].url);
-  setTimeout(function() {
-    alert("Click the Orange Sparkers Icon in the top right to view mutual content between you and " + choices[parseInt(notificationID)].name + " to share!");
-  }, 2000);
+  // setTimeout(function() {
+  //   alert("Click the Orange Sparkers Icon in the top right to view mutual content between you and " + choices[parseInt(notificationID)].name + " to share!");
+  // }, 2000);
 });

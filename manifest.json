@@ -24,7 +24,7 @@
 
   "content_scripts": [
         {
-        "matches": ["*://*.facebook.com/*", "https://www.google.com/"],
+        "matches": ["*://*.facebook.com/*", "https://www.facebook.com/"],
         "js": ["scripts/jquery-1.6.1.min.js","scripts/content.js"],
         "run_at": "document_end"         // pay attention to this line
         }
