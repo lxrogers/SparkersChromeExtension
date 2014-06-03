@@ -39,6 +39,7 @@ function renderSparks(data) {
     });
 
     $('.spark-container').first().css("border-color", "#FF7A00");
+    $('.spark-container').first().css("border-width", "5px");
 }
 function copyTextToClipboard(text) {
   var copyFrom = $('<textarea/>');

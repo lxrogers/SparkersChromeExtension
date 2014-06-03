@@ -37,7 +37,7 @@ h2 {
 	position: relative;
 	background-color: #000;
 	min-height: 200px;
-
+	box-sizing: border-box;
 }
 
 .spark {
