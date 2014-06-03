@@ -113,7 +113,7 @@ function showGuidePage() {
   // Paragraph after arrow 3
   var guideMessageDiv3 = document.createElement("div");
   guideMessageDiv3.setAttribute('id', 'guideMessageDiv3');
-  guideMessageDiv3.setAttribute('style', 'width:25%; position: fixed; right: 220px; top:325px; font-size: 26px;');
+  guideMessageDiv3.setAttribute('style', 'width:25%; position: fixed; right: 220px; top:340px; font-size: 26px;');
   overlay.appendChild(guideMessageDiv3);
   var paraAfterArrow3 = document.createElement("p");
   paraAfterArrow3.innerHTML = '[3] Click to copy a link to old content and send it in Facebook Messenger';
