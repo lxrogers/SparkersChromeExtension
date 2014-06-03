@@ -30,7 +30,7 @@
         {{#if this.video_embed}}
             <div class="spark">
               <div class="overlay">
-                <h2>{{this.text}}</h2>
+                <h2>{{limit this.text}}</h2>
                 <h2> {{this.type}} {{this.date}}</h2>
                 <a href='{{this.link}}' target='_blank'>Link</a>
               </div>
@@ -43,7 +43,7 @@
               <div class="spark">
                   <img src="{{this.img_big}}" alt="click to copy to clipboard"/>
                   <div class="overlay">
-                    <h2>{{this.text}}</h2>
+                    <h2>{{limit this.text}}</h2>
                     <h2> {{this.type}} {{this.date}}</h2>
                     <a href='{{this.link}}' target='_blank'>Link</a>
                   </div>
@@ -52,7 +52,7 @@
               <div class="hidden payload">{{this.img_big}}</div>
             {{else }}
               <div class="spark">
-                  {{this.text}}
+                  {{limit this.text}}
                   <div class="overlay">
                     <h2> {{this.type}} {{this.date}}</h2>
                     <a href='{{this.link}}' target='_blank'>Link</a>
