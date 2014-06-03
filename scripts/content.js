@@ -57,7 +57,7 @@ function showGuidePage() {
 
   // Overlay Paragraph
   var overlayParagraph1 = document.createElement("p");
-  overlayParagraph1.innerHTML = 'Click the orange <strong>Sparkers</strong> icon<br/><br/><br/><br/>';
+  overlayParagraph1.innerHTML = '[1] Click the orange <strong>Sparkers</strong> icon<br/><br/><br/><br/>';
   guideMessageDiv.appendChild(overlayParagraph1);
 
   // Overlay paragraph 2
@@ -83,17 +83,17 @@ function showGuidePage() {
   // Add arrow2
   var arrow2 = document.createElement("img");
   arrow2.setAttribute("id","arrow2");
-  arrow2.setAttribute('style', 'position: fixed; top: 0px; right: 70px;z-index: 2147483647;');
+  arrow2.setAttribute('style', 'position: fixed; top: 10px; right: 70px;z-index: 2147483647;');
   arrow2.src = "http://i.imgur.com/IxnI9O0.png";
   document.body.appendChild(arrow2);
 
   // Paragraph after arrow 2
   var guideMessageDiv2 = document.createElement("div");
   guideMessageDiv2.setAttribute('id', 'guideMessageDiv2');
-  guideMessageDiv2.setAttribute('style', 'width:15%; position: fixed; right: 0px; top:170px; font-size: 26px;');
+  guideMessageDiv2.setAttribute('style', 'width:15%; position: fixed; right: 0px; top:160px; font-size: 26px;');
   overlay.appendChild(guideMessageDiv2);
   var paraAfterArrow2 = document.createElement("p");
-  paraAfterArrow2.innerHTML = 'Sparkers shows your mutual content';
+  paraAfterArrow2.innerHTML = '[2] Sparkers shows your mutual content';
   guideMessageDiv2.appendChild(paraAfterArrow2);
 
   // Add sparkers panel
@@ -113,10 +113,10 @@ function showGuidePage() {
   // Paragraph after arrow 3
   var guideMessageDiv3 = document.createElement("div");
   guideMessageDiv3.setAttribute('id', 'guideMessageDiv3');
-  guideMessageDiv3.setAttribute('style', 'width:20%; position: fixed; right: 200px; top:300px; font-size: 26px;');
+  guideMessageDiv3.setAttribute('style', 'width:25%; position: fixed; right: 220px; top:325px; font-size: 26px;');
   overlay.appendChild(guideMessageDiv3);
   var paraAfterArrow3 = document.createElement("p");
-  paraAfterArrow3.innerHTML = 'Click to copy a link to old content and send it in Facebook Messenger';
+  paraAfterArrow3.innerHTML = '[3] Click to copy a link to old content and send it in Facebook Messenger';
   guideMessageDiv3.appendChild(paraAfterArrow3);
   
   
@@ -137,7 +137,6 @@ function restore() {
   document.body.removeChild(document.getElementById("arrow2"));
   document.body.removeChild(document.getElementById("arrow3"));
   document.body.removeChild(document.getElementById("sparkersPanel"));
-  document.body.removeChild(document.getElementById("guideMessageDiv2"));
   
 }
 // ********************************************************
