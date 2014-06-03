@@ -3,9 +3,11 @@
 // var otherPersonsFbUrl = 'ninjah';
 // var timeFrame = '1 and a half years';
 // var eventThatWeNotifyThemAbout = 'you went to Amsterdam with';
-var choices = [{name: 'Kai', gender: 'him', url: 'neokaiyuan', time: '1 and a half years', image: 'http://scontent-a.xx.fbcdn.net/hphotos-xaf1/t1.0-9/p180x540/1003129_10151528882758992_1619532225_n.jpg', eventName: 'you went to Amsterdam with'},
-              {name:'Nusi', gender: 'her', url: 'ncvue', time: '3 months', image: 'http://scontent-a.xx.fbcdn.net/hphotos-xaf1/t1.0-9/s720x720/1689775_10203686688630309_4052531959958338410_n.jpg', eventName: 'you went to senior formal with'},
-              {name:'Christina', gender: 'her', url: 'chdimopoulos', time: '1 year', image: 'http://scontent-a.xx.fbcdn.net/hphotos-xaf1/t1.0-9/s720x720/484108_10151099095962593_2136208186_n.jpg', eventName: 'you went to ASB with'}];
+var choices = [
+{name:'Christina', gender: 'her', url: 'chdimopoulos', time: '1 year', image: 'http://scontent-a.xx.fbcdn.net/hphotos-xaf1/t1.0-9/s720x720/484108_10151099095962593_2136208186_n.jpg', eventName: 'you were tagged in a photo titled "Blueberry banana pancakes and cheddar scrambled eggs!" with'},
+{name:'Nusi', gender: 'her', url: 'ncvue', time: '3 months', image: 'http://scontent-a.xx.fbcdn.net/hphotos-xaf1/t1.0-9/s720x720/1689775_10203686688630309_4052531959958338410_n.jpg', eventName: 'you were tagged in a photo at San Francisco City Target At The Metreon with'},
+{name: 'Kai', gender: 'him', url: 'neokaiyuan', time: '1 and a half years', image: 'http://scontent-a.xx.fbcdn.net/hphotos-xaf1/t1.0-9/p180x540/1003129_10151528882758992_1619532225_n.jpg', eventName: 'you were tagged in a photo at Krakow, Poland with'}
+              ];
 
 // Make the "!" blink over the chrome icon to indicate notification
 var ANIMATION_TIME_IN_MS = 500;
