@@ -90,7 +90,7 @@ function showGuidePage() {
   // Paragraph after arrow 2
   var guideMessageDiv2 = document.createElement("div");
   guideMessageDiv2.setAttribute('id', 'guideMessageDiv2');
-  guideMessageDiv2.setAttribute('style', 'width:15%; position: fixed; right: 0px; top:160px; font-size: 26px;');
+  guideMessageDiv2.setAttribute('style', 'width:15%; position: fixed; right: 0px; top:170px; font-size: 20px;');
   overlay.appendChild(guideMessageDiv2);
   var paraAfterArrow2 = document.createElement("p");
   paraAfterArrow2.innerHTML = '[2] Sparkers shows your mutual content';
@@ -99,7 +99,7 @@ function showGuidePage() {
   // Add sparkers panel
   var sparkersPanel = document.createElement("img");
   sparkersPanel.setAttribute("id","sparkersPanel");
-  sparkersPanel.setAttribute('style', 'position: fixed; top: 300px; right: 0px;z-index: 2147483647;');
+  sparkersPanel.setAttribute('style', 'position: fixed; top: 250px; right: 0px;z-index: 2147483647;');
   sparkersPanel.src = "http://i.imgur.com/fdm4v7b.png";
   document.body.appendChild(sparkersPanel);
 
