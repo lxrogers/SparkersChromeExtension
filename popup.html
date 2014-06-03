@@ -6,12 +6,7 @@
   </head>
 
   <body>
-    <div id="popup">
-      <br/>
-      <h2>Items you're both tagged in:</h2>
-    	 Click an item to copy to clipboard!
-    </div>
-    <div id="spacer"></div>
+    
     
   
   <div id= "sparks">
@@ -21,8 +16,15 @@
 
   </body>
    <script type="text/x-handlebars-template" id="sparks-template">
-      {{#each sparks }}
-        
+      <div id="popup">
+        <h2>You are talking to:</h2><br/>
+        <span><img src = "{{this.userInfo.pic}}"/><h1>{{this.userInfo.name}}</h1></span>
+        <br/>
+        <h2>Items you are both tagged in:</h2> Click an item to copy to clipboard!
+      </div>
+      <div id="spacer"></div>
+      {{#each this.allData}}
+      <hr/>
       <div class="spark-container">
         
         {{#if this.video_embed}}
@@ -30,6 +32,7 @@
               <div class="overlay">
                 <h2>{{this.text}}</h2>
                 <h2> {{this.type}} {{this.date}}</h2>
+                <a href='{{this.link}}' target='_blank'>Link</a>
               </div>
                <img src="{{this.img_small}}" alt="click to copy to clipboard"/>
             </div>
@@ -42,6 +45,7 @@
                   <div class="overlay">
                     <h2>{{this.text}}</h2>
                     <h2> {{this.type}} {{this.date}}</h2>
+                    <a href='{{this.link}}' target='_blank'>Link</a>
                   </div>
               </div>
               <div class="copy"><h1>Copy to clipboard<h1></div>
@@ -51,6 +55,7 @@
                   {{this.text}}
                   <div class="overlay">
                     <h2> {{this.type}} {{this.date}}</h2>
+                    <a href='{{this.link}}' target='_blank'>Link</a>
                   </div>
               </div>
               <div class="copy"><h1>Copy to clipboard<h1></div>
@@ -58,8 +63,7 @@
             {{/if}}
         {{/if}}
       </div>
-      <center><a href='{{this.link}}' target='_blank'>Link</a></center>
-      <hr/>
+      <center></center>
       {{/each}}
     </script>
 

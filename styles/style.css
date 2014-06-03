@@ -10,6 +10,10 @@ body {
 	overflow: hidden;
 }
 
+a {
+	color:#ffffff;
+}
+
 h1 {
 	font-size: 150%;
 }
@@ -19,9 +23,9 @@ h2 {
 }
 #sparks {
 	position: fixed;
-	height: 80%;
-	top:20%;
-	overflow: scroll;
+	height: 100%;
+	overflow: auto;
+	width:97%;
 }
 .spark-container{
 	margin: 5px;

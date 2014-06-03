@@ -171,7 +171,7 @@ if (document.URL !== "https://www.facebook.com/") {
     allData = e.data;
 
     //send message
-    chrome.runtime.sendMessage({data: allData}, function(response) {});
+    chrome.runtime.sendMessage(allData, function(response) {});
 
     //This is the data from the Facebook SDK
   },false);

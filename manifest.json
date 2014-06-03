@@ -10,7 +10,8 @@
     "notifications",
     "clipboardWrite",
     "http://scontent-a.xx.fbcdn.net/*",
-    "http://fbcdn-sphotos-g-a.akamaihd.net/*"
+    "http://fbcdn-sphotos-g-a.akamaihd.net/*",
+    "http://fbcdn-profile-a.akamaihd.net/*"
 	],
   "icons": { "16" : "images/sparkers_icon.png",
                         "48" : "images/sparkers_icon_48.png",
